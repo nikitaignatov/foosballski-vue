@@ -1,13 +1,13 @@
 <template>
-  <HelloWorld />
+  <LiveGame />
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
+  import LiveGame from '../components/LiveGame'
 
   export default {
     components: {
-      HelloWorld
+      LiveGame
     }
   }
 </script>
