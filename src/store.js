@@ -5,11 +5,15 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    game: []
+    time: '00:00',
+    game: [],
   },
   mutations: {
     update(state, data) {
       state.game = data
+    },
+    time(state, data) {
+      state.time = data
     }
   },
   actions: {

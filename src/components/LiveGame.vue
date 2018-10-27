@@ -12,20 +12,20 @@
       </v-card-title>
         <v-container fill-height color="grey lighten-3">
           <v-layout align-center>
-            <strong class="display-4 font-weight-regular mr-4">8</strong>
+            <strong class="display-4 font-weight-regular mr-4">{{game.status.Item1.Item2}}</strong>
             <v-layout column justify-end class="text-xs-center">
-              <strong>:</strong>
+              <strong>{{time}}</strong>
             </v-layout>
-            <strong class="display-4 font-weight-regular mr-4">8</strong>
+            <strong class="display-4 font-weight-regular mr-4">{{game.status.Item2.Item2}}</strong>
           </v-layout>
         </v-container>
     </v-card>
     <v-card-text class="py-0" width="600">
       <v-timeline align-top dense>
         <v-timeline-item
-          :color="event.Case == 'Goal'?'green':'grey'"
+          :color="event.Case == 'Goal'?'green':'grey'" class="pb-0"
           small
-          v-for="event in game"
+          v-for="event in game.events"
         >
           <v-layout wrap pt-3>
             <v-flex xs3>
@@ -51,7 +51,7 @@
 <script>
 import { mapState } from "vuex";
 export default {
-  computed: mapState(["game"]),
+  computed: mapState(['game','time']),
   data() {
     return {
       notifications: false,
