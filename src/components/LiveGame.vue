@@ -11,6 +11,9 @@
                   <v-avatar tile class="black white--text">
                     <v-icon>accessibility_new</v-icon>
                   </v-avatar>
+                  <v-avatar tile class="black white--text">
+                    <strong>{{players[0].goals.length}}</strong>
+                  </v-avatar>
                   {{players[0].card}}
                 </v-chip>
                 
@@ -18,6 +21,9 @@
                 <v-chip label class="white black--text">
                   <v-avatar tile class="black white--text">
                     <v-icon>directions_run</v-icon>
+                  </v-avatar>
+                  <v-avatar tile class="black white--text">
+                    <strong>{{players[1].goals.length}}</strong>
                   </v-avatar>
                   {{players[1].card}}
                 </v-chip>
@@ -28,6 +34,9 @@
                   <v-avatar tile class="white black--text">
                     <v-icon>accessibility_new</v-icon>
                   </v-avatar>
+                  <v-avatar tile class="white black--text">
+                    <strong>{{players[3].goals.length}}</strong>
+                  </v-avatar>
                   {{players[2].card}}
                 </v-chip>
                     <v-icon class="black--text">swap_horiz</v-icon>
@@ -35,6 +44,9 @@
                 <v-chip label class="black white--text">
                   <v-avatar tile class="white black--text">
                     <v-icon>directions_run</v-icon>
+                  </v-avatar>
+                  <v-avatar tile class="white black--text">
+                    <strong>{{players[3].goals.length}}</strong>
                   </v-avatar>
                   {{players[3].card}}
                 </v-chip>
