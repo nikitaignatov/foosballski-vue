@@ -35,7 +35,7 @@
                     <v-icon>accessibility_new</v-icon>
                   </v-avatar>
                   <v-avatar tile class="white black--text">
-                    <strong>{{players[3].goals.length}}</strong>
+                    <strong>{{players[2].goals.length}}</strong>
                   </v-avatar>
                   {{players[2].card}}
                 </v-chip>
