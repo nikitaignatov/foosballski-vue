@@ -7,6 +7,7 @@ export default new Vuex.Store({
   state: {
     time: '00:00',
     game: [],
+    players:['---','---','---','---']
   },
   mutations: {
     update(state, data) {
@@ -14,6 +15,9 @@ export default new Vuex.Store({
     },
     time(state, data) {
       state.time = data
+    },
+    players(state, data) {
+      state.players = data
     }
   },
   actions: {

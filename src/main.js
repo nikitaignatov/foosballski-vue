@@ -19,6 +19,10 @@ hub.client.time = function (message) {
   console.log(message)
   store.commit('time',JSON.parse( message))
 }
+hub.client.players = function (message) {
+  console.log(message)
+  store.commit('players',JSON.parse( message))
+}
 
 $.connection.hub.disconnected(function () {
   setTimeout(function () {
