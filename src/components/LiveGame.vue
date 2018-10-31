@@ -14,7 +14,7 @@
                   <v-avatar tile class="black white--text">
                     <strong>{{players[0].goals.length}}</strong>
                   </v-avatar>
-                  {{players[0].card}}
+                  {{players[0].player.firstName}}
                 </v-chip>
                 
                     <v-icon>swap_horiz</v-icon>
@@ -25,7 +25,7 @@
                   <v-avatar tile class="black white--text">
                     <strong>{{players[1].goals.length}}</strong>
                   </v-avatar>
-                  {{players[1].card}}
+                  {{players[1].player.firstName}}
                 </v-chip>
                 
                  vs 
@@ -37,7 +37,7 @@
                   <v-avatar tile class="white black--text">
                     <strong>{{players[2].goals.length}}</strong>
                   </v-avatar>
-                  {{players[2].card}}
+                  {{players[2].player.firstName}}
                 </v-chip>
                     <v-icon class="black--text">swap_horiz</v-icon>
                 
@@ -48,7 +48,7 @@
                   <v-avatar tile class="white black--text">
                     <strong>{{players[3].goals.length}}</strong>
                   </v-avatar>
-                  {{players[3].card}}
+                  {{players[3].player.firstName}}
                 </v-chip>
                 
         </h3>
