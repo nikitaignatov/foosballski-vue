@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  import LiveGame from '../components/LiveGame'
+  import LiveGame from '../components/live-game/LiveGame.vue'
 
   export default {
     components: {

@@ -4,65 +4,8 @@
     width="100%"
   >
     <v-card dark flat >
-      <v-card-title class="pa-2 red darken-3">
-            <v-avatar class="white black--text">{{game.status.Item2.Item1.color.Case}}</v-avatar>
-        <h3 class="title font-weight-light text-xs-center grow">
-                <v-chip label class="white black--text">
-                  <v-avatar tile class="black white--text">
-                    <v-icon>accessibility_new</v-icon>
-                  </v-avatar>
-                  <v-avatar tile class="black white--text">
-                    <strong>{{players[0].goals.length}}</strong>
-                  </v-avatar>
-                  {{players[0].player.firstName}}
-                </v-chip>
-                
-                    <v-icon>swap_horiz</v-icon>
-                <v-chip label class="white black--text">
-                  <v-avatar tile class="black white--text">
-                    <v-icon>directions_run</v-icon>
-                  </v-avatar>
-                  <v-avatar tile class="black white--text">
-                    <strong>{{players[1].goals.length}}</strong>
-                  </v-avatar>
-                  {{players[1].player.firstName}}
-                </v-chip>
-                
-                 vs 
-                 
-                <v-chip label class="black white--text">
-                  <v-avatar tile class="white black--text">
-                    <v-icon>accessibility_new</v-icon>
-                  </v-avatar>
-                  <v-avatar tile class="white black--text">
-                    <strong>{{players[2].goals.length}}</strong>
-                  </v-avatar>
-                  {{players[2].player.firstName}}
-                </v-chip>
-                    <v-icon class="black--text">swap_horiz</v-icon>
-                
-                <v-chip label class="black white--text">
-                  <v-avatar tile class="white black--text">
-                    <v-icon>directions_run</v-icon>
-                  </v-avatar>
-                  <v-avatar tile class="white black--text">
-                    <strong>{{players[3].goals.length}}</strong>
-                  </v-avatar>
-                  {{players[3].player.firstName}}
-                </v-chip>
-                
-        </h3>
-            <v-avatar class="black">{{game.status.Item1.Item1.color.Case}}</v-avatar>
-      </v-card-title>
-        <v-container fluid fill-height color="grey darken-1">
-          <v-layout align-center>
-            <strong class="display-4 font-weight-regular mr-4">{{game.status.Item2.Item2}}</strong>
-            <v-layout column justify-end class="text-xs-center">
-              <h1>{{time}}</h1>
-            </v-layout>
-            <strong class="display-4 font-weight-regular mr-4">{{game.status.Item1.Item2}}</strong>
-          </v-layout>
-        </v-container>
+      <team-status></team-status>
+      <score-panel></score-panel>
     </v-card>
     <v-card-text class="py-0" >
       <v-timeline 
@@ -139,14 +82,10 @@
 
 <script>
 import { mapState } from "vuex";
+import TeamStatus from "./TeamStatus.vue";
+import ScorePanel from "./ScorePanel.vue";
 export default {
-  computed: mapState(["game", "time", "players"]),
-  data() {
-    return {
-      notifications: false,
-      sound: true,
-      widgets: false
-    };
-  }
+  components: { TeamStatus,ScorePanel },
+  computed: mapState(["game", "time", "players"])
 };
 </script>

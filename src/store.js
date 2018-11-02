@@ -5,11 +5,15 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    api: {},
     time: '00:00',
     game: [],
-    players:['---','---','---','---']
+    players: ['---', '---', '---', '---']
   },
   mutations: {
+    api(state, api) {
+      state.api = api
+    },
     update(state, data) {
       state.game = data
     },
@@ -25,6 +29,15 @@ export default new Vuex.Store({
       commit
     }, data) {
       commit('update', data)
+    },
+    swap({
+      state
+    }, team) {
+      console.log('swap', team)
+      state.api.server.execute({
+        'Case': 'Swap',
+        'Fields': [team]
+      })
     }
   }
 })

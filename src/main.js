@@ -12,16 +12,20 @@ var hub = $.connection.foosball
 hub.client.publish = function (message) {
   var json = JSON.stringify(message, null, 2)
   const data = JSON.parse(message)
-  console.log(data)
-  store.commit('update', data)
+  if (JSON.stringify(data) !== JSON.stringify(store.state.game)) {
+    console.log(data)
+    store.commit('update', data)
+  }
 }
 hub.client.time = function (message) {
-  console.log(message)
-  store.commit('time',JSON.parse( message))
+  store.commit('time', JSON.parse(message))
 }
 hub.client.players = function (message) {
-  console.log(message)
-  store.commit('players',JSON.parse( message))
+  const data = JSON.parse(message)
+  if (JSON.stringify(data) !== JSON.stringify(store.state.players)) {
+    console.log(data)
+    store.commit('players', data)
+  }
 }
 
 $.connection.hub.disconnected(function () {
@@ -31,6 +35,7 @@ $.connection.hub.disconnected(function () {
 })
 $.connection.hub.start()
   .done(function () {
+    store.commit('api', hub)
     hub.server.command('start')
   })
 
