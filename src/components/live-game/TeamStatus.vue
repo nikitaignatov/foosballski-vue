@@ -8,7 +8,7 @@
                 :goals="players[0].goals.length" 
                 :name="players[0].player.firstName">
             </PlayerStatus>                
-            <v-icon @click="swap('white')">swap_horiz</v-icon>
+            <v-icon @click="swap('White')">swap_horiz</v-icon>
             <PlayerStatus 
                 team="white" 
                 icon="directions_run" 
@@ -24,7 +24,7 @@
                 :goals="players[2].goals.length" 
                 :name="players[2].player.firstName">
             </PlayerStatus>                
-            <v-icon @click="swap('black')">swap_horiz</v-icon>
+            <v-icon @click="swap('Black')">swap_horiz</v-icon>
             <PlayerStatus 
                 team="black" 
                 icon="directions_run" 

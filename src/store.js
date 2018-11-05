@@ -34,10 +34,12 @@ export default new Vuex.Store({
       state
     }, team) {
       console.log('swap', team)
-      state.api.server.execute({
+      state.api.server.execute(JSON.stringify({
         'Case': 'Swap',
-        'Fields': [team]
-      })
+        'Fields': [{
+          'Case': team
+        }]
+      }))
     }
   }
 })
