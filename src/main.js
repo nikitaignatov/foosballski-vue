@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import './plugins/vuetify'
-import './plugins/vuetify'
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -43,6 +42,7 @@ try {
 } catch (e) {
   console.error(e)
 }
+
 new Vue({
   router,
   store,

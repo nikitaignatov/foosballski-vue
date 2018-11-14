@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import ConfigureGame from './views/ConfigureGame.vue'
 
 Vue.use(Router)
 
@@ -9,7 +9,12 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: ConfigureGame
+    },
+    {
+      path: '/game/:id',
+      name: 'game',
+      component: ConfigureGame
     },
     {
       path: '/about',

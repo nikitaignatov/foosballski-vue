@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import G from './plugins/guid'
-
+import router from './router';
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -65,6 +65,7 @@ export default new Vuex.Store({
       console.debug('start')
       const id = G.guid()
       commit('start', id)
+      router.push('/game/'+id)
       state.api.server.execute(id, JSON.stringify({
         'Case': 'NewGame',
         'Fields': [id]

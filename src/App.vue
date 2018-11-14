@@ -96,8 +96,8 @@
       </v-btn>
     </v-toolbar>
     <v-content>
-      <v-container fluid fill-height>
-        <v-layout justify-center align-center>
+      <v-container  fill-height>
+        <v-layout row justify-center align-center >
         <router-view></router-view>
         </v-layout>
       </v-container>
@@ -108,7 +108,7 @@
 <script>
 import { mapState, mapActions } from 'vuex';
 export default {
-    computed: mapState(['isPlaying']),
+    computed: mapState(['isPlaying','id']),
     methods: {
         ...mapActions(['start', 'end', 'pause'])
     },
