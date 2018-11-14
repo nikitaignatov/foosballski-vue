@@ -85,6 +85,9 @@
         class="hidden-sm-and-down"
       ></v-text-field>
       <v-spacer></v-spacer>
+      <v-btn v-if="isPlaying" color="primary" @click.native="pause">Pause Game</v-btn>
+      <v-btn v-if="isPlaying" color="error" @click.native="end">End Game</v-btn>
+      <v-btn v-if="!isPlaying" color="success" @click.native="start">Start Game</v-btn>
       <v-btn icon>
         <v-icon>apps</v-icon>
       </v-btn>
@@ -103,30 +106,35 @@
 </template>
 
 <script>
-  export default {
+import { mapState, mapActions } from 'vuex';
+export default {
+    computed: mapState(['isPlaying']),
+    methods: {
+        ...mapActions(['start', 'end', 'pause'])
+    },
     data: () => ({
-      dialog: false,
-      drawer: null,
-      items: [
-        { icon: 'group', text: 'Teams' },
-        { icon: 'history', text: 'Games' },
-        {
-          icon: 'keyboard_arrow_up',
-          'icon-alt': 'keyboard_arrow_down',
-          text: 'Players',
-          model: true,
-          children: [
-            { icon: 'apps', text: 'All Players' },
-            { icon: 'how_to_reg', text: 'Register Player' },
-            { icon: 'show_chart', text: 'Stats' },
-          ]
-        },
-        { icon: 'settings', text: 'Settings' },
-        { icon: 'help', text: 'Help' },
-      ]
+        dialog: false,
+        drawer: null,
+        items: [
+            { icon: 'group', text: 'Teams' },
+            { icon: 'history', text: 'Games' },
+            {
+                icon: 'keyboard_arrow_up',
+                'icon-alt': 'keyboard_arrow_down',
+                text: 'Players',
+                model: true,
+                children: [
+                    { icon: 'apps', text: 'All Players' },
+                    { icon: 'how_to_reg', text: 'Register Player' },
+                    { icon: 'show_chart', text: 'Stats' }
+                ]
+            },
+            { icon: 'settings', text: 'Settings' },
+            { icon: 'help', text: 'Help' }
+        ]
     }),
     props: {
-      source: String
+        source: String
     }
-  }
+};
 </script>

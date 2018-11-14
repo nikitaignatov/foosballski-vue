@@ -38,13 +38,13 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
-import PlayerStatus from "./PlayerStatus.vue";
+import { mapState, mapActions } from 'vuex';
+import PlayerStatus from './PlayerStatus.vue';
 export default {
-  components: { PlayerStatus },
-  computed: mapState(["game", "time", "players"]),
-  methods: {
-    ...mapActions(["swap"])
-  }
+    components: { PlayerStatus },
+    computed: mapState(['game', 'time', 'players']),
+    methods: {
+        ...mapActions(['swap'])
+    }
 };
 </script>
